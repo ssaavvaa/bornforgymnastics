@@ -87,7 +87,7 @@ div {
         p {
           text-align: center;
           max-width: 85%;
-          font-size: 20px;
+          font-size: 18px;
         }
         svg {
           width: 67px;

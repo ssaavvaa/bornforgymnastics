@@ -22,6 +22,7 @@
   border-bottom: 2px solid black;
 }
 h3 {
+  font-weight: 500;
   font-family: $myriadMedium;
   position: relative;
   max-width: max-content;

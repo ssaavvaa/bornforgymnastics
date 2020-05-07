@@ -121,9 +121,11 @@ export default {};
     li {
       p {
         font-size: 14px;
+        font-family: $myriadMedium;
       }
       h6 {
         font-size: 14px;
+
         span {
           font-family: $mainFontBlack;
           font-size: 24px;
@@ -183,6 +185,7 @@ export default {};
     }
     li {
       p {
+        font-family: $myriadMedium;
         font-size: 14px;
       }
       h6 {

@@ -43,7 +43,7 @@ section {
 
 .info {
   p {
-    font-family: $myriadMedium;
+    font-family: $mainFontReg !important;
     margin-bottom: 13px;
     font-size: 20px;
     max-width: 400px;
@@ -56,7 +56,7 @@ section {
 .to-vlog {
   margin-top: 40px;
   color: $mainOrange;
-  font-family: $robotoBold !important;
+  font-family: $myriadBold !important;
   svg {
     fill: $mainOrange;
   }
@@ -73,15 +73,16 @@ section {
     grid-template-columns: 1fr;
     grid-gap: 30px;
   }
-}
-.info {
-  p {
-    margin-bottom: 10px;
-    font-size: 18px;
-    max-width: 400px;
-  }
-  a {
-    max-width: 400px;
+  .info {
+    p {
+      font-family: $mainFontLight !important;
+      margin-bottom: 10px;
+      font-size: 16px;
+      max-width: 400px;
+    }
+    a {
+      max-width: 400px;
+    }
   }
 }
 </style>

@@ -19,6 +19,7 @@ section {
   background: url("../../static/involve-bg.jpg") no-repeat center center/cover;
 }
 h2 {
+  font-weight: 500;
   font-family: $myriadMedium;
   position: relative;
   max-width: max-content;

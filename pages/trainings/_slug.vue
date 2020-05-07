@@ -361,6 +361,15 @@ export default {
   .training-full__description--phone {
     display: block;
     margin-top: 30px;
+    p {
+      &:nth-of-type(1) {
+        &:after {
+          content: "___";
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
   .training-heading {
     display: none;
@@ -419,8 +428,10 @@ export default {
           h3 {
             font-family: $mainFontBold;
             font-size: 18px;
-            margin-bottom: 15px;
+
             max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 10px;
           }
           p {
             font-size: 16px;
@@ -443,6 +454,7 @@ export default {
           grid-gap: 5px;
           grid-template-columns: 1fr;
           div {
+            line-height: 1;
             &:nth-of-type(1) {
               font-family: $superBoldFont;
               color: $paleOrange;
