@@ -103,7 +103,7 @@ section {
         max-width: 100%;
 
         * {
-          margin-bottom: 4px;
+          margin-bottom: 1px;
           text-align: center;
         }
         img {
@@ -112,6 +112,16 @@ section {
         }
       }
     }
+  }
+  .city {
+    font-size: 16px;
+  }
+  .country {
+    font-size: 16px;
+  }
+
+  .date {
+    font-size: 12px;
   }
 }
 </style>
