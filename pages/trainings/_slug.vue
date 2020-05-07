@@ -113,9 +113,12 @@ export default {
       });
     }
   },
-  async asyncData({ payload, app: { store }, params: { slug } }) {
-    const training = store.state.trainings.find(val => val.slug === slug);
-    return { training };
+  async asyncData({ payload, app: { store }, $axios, params: { slug } }) {
+    if (payload) {
+      return { training: payload };
+    }
+    const response = await $axios.$get(`/trainings?slug=${slug}`);
+    return { training: response[0] };
   }
 };
 </script>

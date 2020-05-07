@@ -18,7 +18,7 @@
       </div>
 
       <ul class="trainings">
-        <li v-for="training in $store.state.trainings" :key="training._id">
+        <li v-for="training in trainings" :key="training._id">
           <nuxt-link :to="`/trainings/${training.slug}`">
             <picture>
               <source
@@ -68,7 +68,14 @@
 
 <script>
 export default {
-  auth: false
+  auth: false,
+  async asyncData({ $axios, payload }) {
+    if (payload) {
+      return { trainings: payload };
+    }
+    const trainings = await $axios.$get("/trainings");
+    return { trainings };
+  }
 };
 </script>
 

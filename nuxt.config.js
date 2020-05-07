@@ -1,4 +1,4 @@
-import axios from "axios";
+const dynamicRoutes = require("./helpers/buildRoutes");
 
 export default {
   mode: "universal",
@@ -100,18 +100,7 @@ export default {
   },
   buildModules: ["@nuxtjs/moment"],
   generate: {
-    fallback:true,
-    routes() {
-      return axios
-        .get(`${process.env.BASE_URL || "http://localhost:1337"}/trainings`)
-        .then(res => {
-          return res.data.map(training => {
-            return {
-              route: "/trainings/" + training.slug,
-              payload: training
-            };
-          });
-        });
-    }
+    fallback: true,
+    routes: dynamicRoutes
   }
 };
