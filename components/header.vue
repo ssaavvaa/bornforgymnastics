@@ -1,8 +1,8 @@
 <template>
   <header>
     <nav>
-      <nuxt-link to="/">
-        <logo-icon class="logo" />
+      <nuxt-link class="logo" to="/">
+        <logo-icon />
       </nuxt-link>
       <nuxt-link to="/cart">
         <cart-icon class="cart" />
@@ -11,7 +11,7 @@
         Sign Up
         <span>/ Sign In</span>
       </nuxt-link>
-      <p v-else @click="$auth.logout({})">Sign Out</p>
+      <p class="register" v-else @click="$auth.logout({})">Sign Out</p>
       <burger-icon @click="this.$toggleSideBar" class="burger" />
     </nav>
   </header>
@@ -68,13 +68,54 @@ header {
   }
 
   .logo {
-    width: 136px;
-    fill: white;
-    height: 48px;
+    svg {
+      width: 136px;
+      fill: white;
+      height: 48px;
+    }
   }
   .burger {
     height: auto;
     width: 45px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    background: $paleOrange;
+    padding: 15px 20px;
+    nav {
+      grid-template-columns: 30px 1fr 30px;
+      grid-template-areas: "cart logo burger";
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      grid-gap: 10px;
+
+      .register {
+        display: none;
+      }
+    }
+
+    .cart {
+      grid-area: cart;
+      width: 30px;
+      height: auto;
+    }
+
+    .logo {
+      grid-area: logo;
+      svg {
+        width: 85px;
+        height: auto;
+      }
+    }
+    .burger {
+      grid-area: burger;
+
+      height: auto;
+      width: 30px;
+    }
   }
 }
 </style>

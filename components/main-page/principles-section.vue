@@ -7,7 +7,9 @@
           <li>
             <div class="number">01</div>
             <h4 class="heading">Sequence</h4>
-            <p class="text">All the programs are grounded in a simple-to-complex basis</p>
+            <p class="text">
+              All the programs are grounded in a simple-to-complex basis
+            </p>
           </li>
           <li>
             <div class="number">02</div>
@@ -42,9 +44,6 @@
             <p class="text">Recovery is a key part of a training process</p>
           </li>
         </ul>
-      </div>
-      <div class="phone">
-        <div></div>
       </div>
     </div>
   </section>
@@ -103,16 +102,75 @@ section {
           font-size: 18px;
         }
       }
-      &:nth-of-type(1) {
-      }
+
       &:nth-of-type(2) {
         align-items: center;
       }
     }
   }
+}
 
-  .phone {
-    display: none;
+@media only screen and (max-width: 768px) {
+  section {
+    background: url("/principles-bg-phone.jpg") no-repeat top center/cover;
+    .desktop {
+      max-width: 970px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+      ul {
+        display: grid;
+        grid-gap: 40px;
+        li {
+          position: relative;
+          left: -20px;
+          display: grid;
+          grid-template-areas:
+            "number heading"
+            "number text";
+          grid-gap: 0px;
+          grid-template-columns: max-content 1fr;
+          grid-template-rows: 30px max-content;
+          .number {
+            position: relative;
+            top: -34px;
+            right: -30px;
+            display: inline-block;
+            font-size: 72px;
+            color: #eb6c0a8a;
+            font-family: $superBoldFont;
+            grid-area: number;
+            margin-right: 0px;
+            z-index: 0;
+          }
+          .heading {
+            position: relative;
+            z-index: 1;
+            color: white;
+            display: inline-block;
+            grid-area: heading;
+            font-family: $myriadMedium;
+            font-size: 20px;
+          }
+          .text {
+            position: relative;
+            z-index: 1;
+            color: white;
+            grid-area: text;
+            font-family: $mainFontLight;
+            font-size: 17px;
+            line-height: 1.4;
+          }
+        }
+        &:nth-of-type(1) {
+          margin-bottom: 20px;
+        }
+        &:nth-of-type(2) {
+          align-items: center;
+        }
+      }
+    }
   }
 }
 </style>

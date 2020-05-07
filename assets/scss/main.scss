@@ -164,7 +164,13 @@ button {
   opacity: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 100px 15px;
+  }
+  .heading-2 {
+    font-size: 30px;
+  }
   .toast {
     min-height: 60px !important;
   }

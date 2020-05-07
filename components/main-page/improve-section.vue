@@ -74,4 +74,39 @@ ul {
     max-width: 288px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  section {
+    background: url("../../static/improve-bg-phone.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  ul {
+    grid-gap: 40px;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    li {
+      h3 {
+        font-size: 20px;
+
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 16px;
+      }
+      svg {
+        fill: $mainOrange;
+        background: rgba(38, 38, 38, 0.822);
+        margin: 0 auto;
+        display: block;
+        width: 60px;
+        height: 60px;
+
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+      max-width: 288px;
+    }
+  }
+}
 </style>

@@ -94,4 +94,43 @@ ul {
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .training-cards {
+    grid-gap: 20px;
+    justify-content: space-between;
+    grid-template-columns: 20px 1fr 20px;
+
+    * {
+      cursor: pointer;
+    }
+    svg {
+      fill: rgba(0, 0, 0, 0.76);
+      width: 100%;
+      height: auto;
+    }
+  }
+  ul {
+    display: grid;
+    grid-gap: 5px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+
+    li {
+      display: none !important;
+      &:nth-of-type(2) {
+        display: initial !important;
+        &:after {
+          height: 60px;
+          width: 60px;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
 </style>

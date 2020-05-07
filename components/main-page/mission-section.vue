@@ -5,9 +5,8 @@
         <brackets />
         <span>
           My Mission:
-          <br />To Involve people into a healthy lifestyle
-          <br />by means of Gymnastics. To Improve myself inspiring you for
-          action
+          <br />To Involve people into a healthy lifestyle <br />by means of
+          Gymnastics. To Improve myself inspiring you for action
         </span>
         <brackets />
       </h3>
@@ -45,6 +44,25 @@ h3 {
       bottom: -35px;
       right: -45px;
       transform: rotate(180deg);
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  h3 {
+    span {
+      font-size: 18px;
+    }
+    svg {
+      width: 30px;
+
+      &:nth-of-type(1) {
+        top: -15px;
+        left: -25px;
+      }
+      &:nth-of-type(2) {
+        bottom: -15px;
+        right: -25px;
+      }
     }
   }
 }

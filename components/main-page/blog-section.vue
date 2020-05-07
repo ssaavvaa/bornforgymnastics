@@ -119,4 +119,13 @@ ul {
     fill: $mainOrange;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+    margin-bottom: 50px;
+  }
+}
 </style>

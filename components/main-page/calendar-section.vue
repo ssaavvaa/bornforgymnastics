@@ -92,4 +92,26 @@ section {
   font-family: $mainFontLight;
   font-size: 16px;
 }
+
+@media only screen and (max-width: 768px) {
+  section {
+    ul {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      padding: 0px 10px;
+      li {
+        max-width: 100%;
+
+        * {
+          margin-bottom: 4px;
+          text-align: center;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
 </style>

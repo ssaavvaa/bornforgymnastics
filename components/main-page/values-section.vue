@@ -52,6 +52,7 @@ div {
         color: white;
         font-size: 22px;
         font-family: $myriadMedium;
+        line-height: 1.4;
       }
       svg {
         width: 100%;
@@ -59,6 +60,38 @@ div {
         padding: 23px 20px;
         fill: $mainOrange;
         background: rgba(38, 38, 38, 0.7);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  section {
+    background: url("/values-bg-phone.jpg") no-repeat center center/cover;
+  }
+  div {
+    ul {
+      li {
+        grid-gap: 15px;
+
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin-bottom: 40px;
+        &:nth-of-type(2) {
+          position: relative;
+          left: 0px;
+        }
+        &:nth-of-type(3) {
+          position: relative;
+          left: 0px;
+        }
+        p {
+          text-align: center;
+          max-width: 85%;
+          font-size: 20px;
+        }
+        svg {
+          width: 67px;
+        }
       }
     }
   }

@@ -61,4 +61,27 @@ section {
     fill: $mainOrange;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  section {
+    h2 {
+      text-align: center;
+    }
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+}
+.info {
+  p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    max-width: 400px;
+  }
+  a {
+    max-width: 400px;
+  }
+}
 </style>

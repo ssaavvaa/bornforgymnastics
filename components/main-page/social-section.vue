@@ -59,6 +59,14 @@
   display: grid;
   grid-gap: 5px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  li {
+    a {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 }
 
 .icons {
@@ -73,6 +81,19 @@
     width: 100%;
     height: auto;
     fill: $mainOrange;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .photos {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    li {
+      &:nth-of-type(5) {
+        display: none;
+      }
+    }
   }
 }
 </style>

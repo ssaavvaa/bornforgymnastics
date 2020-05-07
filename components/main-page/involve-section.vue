@@ -46,4 +46,29 @@ h2 {
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  h2 {
+    span {
+      font-size: 18px;
+      color: white;
+    }
+    svg {
+      width: 30px;
+
+      &:nth-of-type(1) {
+        top: -15px;
+        left: -25px;
+      }
+      &:nth-of-type(2) {
+        bottom: -15px;
+        right: -25px;
+      }
+    }
+  }
+}
 </style>

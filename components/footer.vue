@@ -112,4 +112,69 @@ footer {
   background: white;
   border-radius: 3px;
 }
+
+@media only screen and (max-width: 768px) {
+  .container-footer {
+    grid-template-columns: 1fr;
+
+    grid-gap: 30px;
+    padding: 50px 15px;
+  }
+  .logo {
+    width: 100px;
+    margin: 0 auto;
+  }
+  .middle-footer {
+    nav {
+      margin-bottom: 50px;
+      a {
+        text-align: center;
+      }
+    }
+    ul {
+      display: grid;
+      grid-template-columns: 40px 40px 40px;
+      align-items: center;
+      grid-gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+      li {
+        svg {
+          width: 100%;
+          height: auto;
+          border-radius: 3px;
+        }
+      }
+    }
+    p {
+      font-size: 12px;
+      color: white;
+      font-family: $myriadMedium;
+      text-align: center;
+    }
+  }
+  .icons {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 35px 35px 35px;
+    justify-content: center;
+    li {
+      margin-bottom: 4px;
+      a {
+        svg {
+          fill: white;
+          width: 100%;
+          height: 30px !important;
+        }
+      }
+    }
+  }
+  .youtube {
+    fill: black !important;
+    width: 30px !important;
+    padding: 0px 2px;
+    background: white;
+    border-radius: 3px;
+  }
+}
 </style>
