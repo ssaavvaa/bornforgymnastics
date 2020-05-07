@@ -75,7 +75,6 @@ section {
   }
   .info {
     p {
-      font-family: $mainFontLight !important;
       margin-bottom: 10px;
       font-size: 16px;
       max-width: 400px;

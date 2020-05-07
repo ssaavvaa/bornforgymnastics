@@ -426,6 +426,7 @@ export default {
         grid-gap: 40px;
         li {
           h3 {
+            line-height: 1.4;
             font-family: $mainFontBold;
             font-size: 18px;
 
@@ -434,6 +435,7 @@ export default {
             margin-bottom: 10px;
           }
           p {
+            line-height: 1.4;
             font-size: 16px;
             max-width: 80%;
             margin: 0 auto;
@@ -455,6 +457,7 @@ export default {
           grid-template-columns: 1fr;
           div {
             line-height: 1;
+            margin-bottom: 7px;
             &:nth-of-type(1) {
               font-family: $superBoldFont;
               color: $paleOrange;
@@ -464,11 +467,13 @@ export default {
               h3 {
                 font-family: $mainFontBold;
                 font-size: 18px;
-                margin-bottom: 10px;
+                margin-bottom: 7px;
+                line-height: 1.4;
               }
 
               p {
                 font-size: 16px;
+                line-height: 1.4;
                 font-family: $myriadMedium;
                 color: $paleFont;
               }
