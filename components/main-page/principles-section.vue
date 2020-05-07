@@ -113,6 +113,11 @@ section {
 @media only screen and (max-width: 768px) {
   section {
     background: url("/principles-bg-phone.jpg") no-repeat top center/cover;
+    .container {
+      h2 {
+        margin-bottom: 80px;
+      }
+    }
     .desktop {
       max-width: 970px;
       margin: 0 auto;
@@ -121,7 +126,7 @@ section {
       grid-gap: 30px;
       ul {
         display: grid;
-        grid-gap: 40px;
+        grid-gap: 50px;
         li {
           position: relative;
           left: -20px;

@@ -126,6 +126,9 @@ footer {
   }
   .middle-footer {
     nav {
+      grid-template-columns: max-content max-content;
+      justify-content: space-evenly;
+
       margin-bottom: 50px;
       a {
         text-align: center;
@@ -133,6 +136,7 @@ footer {
     }
     ul {
       display: grid;
+      grid-auto-columns: 1fr;
       grid-template-columns: 40px 40px 40px;
       align-items: center;
       grid-gap: 20px;

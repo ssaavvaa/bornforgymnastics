@@ -146,7 +146,7 @@ export default {};
   }
   .container-top-main {
     grid-template-columns: 1fr;
-    padding: 120px 20px 0px 20px;
+    padding: 120px 20px 145px 20px;
     & > div {
       h3 {
         font-size: 14px;

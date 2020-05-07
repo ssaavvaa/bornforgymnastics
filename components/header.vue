@@ -85,7 +85,7 @@ header {
     background: $paleOrange;
     padding: 15px 20px;
     nav {
-      grid-template-columns: 30px 1fr 30px;
+      grid-template-columns: 30px 1fr 40px;
       grid-template-areas: "cart logo burger";
       justify-content: center;
       align-items: center;
@@ -114,7 +114,7 @@ header {
       grid-area: burger;
 
       height: auto;
-      width: 30px;
+      width: 40px;
     }
   }
 }
