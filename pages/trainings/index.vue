@@ -24,18 +24,18 @@
               <source
                 media="(max-width: 768px)"
                 :srcset="
-                `${training.image}-300.jpg 1x,
+                  `${training.image}-300.jpg 1x,
                ${training.image}-300@2x.jpg 2x,
                ${training.image}-300@3x.jpg 3x`
-              "
+                "
               />
               <source
                 media="(min-width: 768px)"
                 :srcset="
-                `${training.image}.jpg 1x,
+                  `${training.image}.jpg 1x,
                ${training.image}@2x.jpg 2x,
                ${training.image}@3x.jpg 3x`
-              "
+                "
               />
               <img
                 class="picture"
@@ -44,17 +44,25 @@
               />
             </picture>
             <div class="info_training">
-              <h3>{{training.name}}</h3>
-              <p>Level: {{training.level}}</p>
-              <p>Duration: {{training.duration}}</p>
+              <h3>{{ training.name }}</h3>
+              <p>Level: {{ training.level }}</p>
+              <p>Duration: {{ training.duration }}</p>
               <rating :readOnly="true" />
             </div>
             <div class="price">
               <div>
-                <p :class="[training.discount ? 'crossPrice' : '']">{{training.price}} $</p>
-                <p
-                  v-show="training.discount"
-                >{{(training.price - (training.price * (training.discount_procent / 100))).toFixed(2)}} $</p>
+                <p :class="[training.discount ? 'crossPrice' : '']">
+                  {{ training.price }} $
+                </p>
+                <p v-show="training.discount">
+                  {{
+                    (
+                      training.price -
+                      training.price * (training.discount_procent / 100)
+                    ).toFixed(2)
+                  }}
+                  $
+                </p>
               </div>
 
               <dots-icon />
@@ -169,6 +177,58 @@ export default {
   }
   p {
     font-family: $robotoMedium;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .filter-wrapper {
+    padding: 25px;
+
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  .trainings {
+    li {
+      a {
+        padding: 20px;
+
+        grid-gap: 25px;
+        grid-template-columns: 1fr;
+
+        .price {
+          display: grid;
+          grid-template-columns: 1fr 6px;
+          justify-items: flex-end;
+          grid-gap: 10px;
+          align-items: center;
+          & > div > p {
+            margin-right: 5px;
+            display: inline-block;
+            text-align: center;
+            font-size: 24px;
+          }
+          svg {
+            width: 100%;
+            height: auto;
+            fill: $mainOrange;
+          }
+        }
+        .info_training {
+          h3 {
+            font-size: 22px;
+          }
+          p {
+            color: $paleFont;
+            &:nth-of-type(1) {
+              margin-bottom: 8px;
+            }
+            &:nth-of-type(2) {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>

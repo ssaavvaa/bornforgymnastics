@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container container-form">
       <form @submit="handleSubmit">
         <h2 class="heading-1 form-heading">LOGIN</h2>
         <input v-model="identifier" type="email" placeholder="email" />
@@ -90,5 +90,13 @@ button {
 .form-heading {
   color: rgb(90, 90, 90);
   margin-bottom: 35px;
+}
+@media only screen and (max-width: 768px) {
+  .container-form {
+    min-height: 80vh;
+  }
+  form {
+    padding: 50px 15px;
+  }
 }
 </style>

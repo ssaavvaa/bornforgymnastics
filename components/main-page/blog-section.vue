@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <h1 class="heading-2">Fresh in blog</h1>
+    <h2 class="heading-2">Fresh in blog</h2>
     <ul>
       <li>
         <picture>

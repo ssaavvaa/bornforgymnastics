@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container container-form">
       <form @submit="handleSubmit">
         <h2 class="heading-1 form-heading">REGISTER</h2>
         <p class="creation-text">
@@ -11,7 +11,7 @@
         <input v-model="email" type="email" placeholder="email" />
         <input v-model="password" type="password" placeholder="password" />
         <p class="rights">Мы не передаем никакие ваши данные третьим лицам</p>
-        <button type="submit">{{loading ? "Loading..." : 'Submit'}}</button>
+        <button type="submit">{{ loading ? "Loading..." : "Submit" }}</button>
         <nuxt-link to="/login" class="have-account">Have an account</nuxt-link>
       </form>
     </div>
@@ -123,5 +123,13 @@ button {
   display: block;
   text-align: center;
   margin: 0 auto;
+}
+@media only screen and (max-width: 768px) {
+  .container-form {
+    min-height: 80vh;
+  }
+  form {
+    padding: 50px 15px;
+  }
 }
 </style>
