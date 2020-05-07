@@ -1,25 +1,25 @@
 <template>
   <div class="wrapper full-height">
     <div class="training-data">
-      <h2 class="training-data__name">{{training.name}}</h2>
+      <h2 class="training-data__name">{{ training.name }}</h2>
       <ul>
         <li
           class="training-data__mainli"
-          v-for="(complex , i) in training.training_program"
+          v-for="(complex, i) in training.training_program"
           :key="i"
         >
           <h3 @click="showVideos" class="training-data__heading">
-            {{complex.heading}}
+            {{ complex.heading }}
             <big-arrow-icon />
           </h3>
           <ul class="training-data__videos">
             <li
               @click="setVideoSrc(data.video)"
               class="training-data__video"
-              v-for="(data,i) in complex.videos"
+              v-for="(data, i) in complex.videos"
               :key="i"
             >
-              <h4 class="training-data__video-heading">{{data.heading}}</h4>
+              <h4 class="training-data__video-heading">{{ data.heading }}</h4>
             </li>
           </ul>
         </li>
@@ -39,11 +39,11 @@
 
 <script>
 export default {
-  async asyncData({ payload, app: { store }, params: { slug } }) {
+  async asyncData({ payload, $axios, $auth, params: { slug } }) {
     if (payload) {
       return { training: payload };
     }
-    const training = store.state.trainings.find(val => val.slug === slug);
+    const training = $auth.state.user.trainings.find(x => x.slug === slug);
     return { training };
   },
   methods: {
