@@ -1,0 +1,26 @@
+{
+  "name": "bornforgymnastics",
+  "version": "1.0.0",
+  "description": "My epic Nuxt.js project",
+  "author": "Anton Savytskyi",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt generate",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/moment": "^1.6.0",
+    "@nuxtjs/toast": "^3.3.0",
+    "nuxt": "^2.0.0",
+    "nuxt-svg-loader": "^1.2.0",
+    "vue-fragment": "^1.5.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.2"
+  }
+}
