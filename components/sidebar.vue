@@ -24,7 +24,7 @@
         <nuxt-link to="/trainings">
           <span @click="this.$toggleSideBar">Trainings</span>
         </nuxt-link>
-        <nuxt-link to="/">
+        <nuxt-link to="/blog">
           <span @click="this.$toggleSideBar">Blog</span>
         </nuxt-link>
         <nuxt-link to="/cart">
@@ -36,7 +36,13 @@
         <nuxt-link v-show="!$auth.loggedIn" class="login" to="/login">
           <span @click="this.$toggleSideBar">Sign In</span>
         </nuxt-link>
-        <p @click="$auth.logout({})" class="register logout" v-show="$auth.loggedIn">Sign Out</p>
+        <p
+          @click="$auth.logout({})"
+          class="register logout"
+          v-show="$auth.loggedIn"
+        >
+          Sign Out
+        </p>
       </nav>
     </div>
   </aside>

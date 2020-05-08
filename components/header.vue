@@ -4,7 +4,11 @@
       <nuxt-link class="logo" to="/">
         <logo-icon />
       </nuxt-link>
-      <nuxt-link to="/cart">
+      <nuxt-link class="cart_wrapper" to="/cart">
+        <span v-show="$store.state.cart.length">
+          {{ $store.state.cart.length }}
+        </span>
+
         <cart-icon class="cart" />
       </nuxt-link>
       <nuxt-link v-if="!$auth.loggedIn" class="register" to="/register">
@@ -18,7 +22,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    const cart = JSON.parse(localStorage.getItem("bornforgymnastics-cart"));
+    this.$store.commit("setCart", cart);
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -59,6 +68,26 @@ header {
         font-family: $robotoMedium;
         font-size: 15px;
       }
+    }
+  }
+
+  .cart_wrapper {
+    position: relative;
+    span {
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: $mainOrange;
+      color: white;
+      width: 23px;
+      height: 23px;
+
+      border-radius: 100%;
+      font-weight: 600;
     }
   }
 

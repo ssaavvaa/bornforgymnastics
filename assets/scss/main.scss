@@ -51,12 +51,14 @@ button {
   background: $mainOrange;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-
+  color: white;
   font-family: $mainFontReg;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 20px !important;
+
   span {
     font-size: 20px;
+    color: white;
   }
   &:focus {
     border: none;

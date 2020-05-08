@@ -2,74 +2,28 @@
   <section class="container">
     <h2 class="heading-2">Fresh in blog</h2>
     <ul>
-      <li>
+      <li v-for="blog in $store.state.blogs.slice(0, 3)" :key="blog._id">
         <picture>
           <source
             media="(min-width: 300px)"
-            srcset="
-              /blog/five_secrets/main.jpg    1x,
-              /blog/five_secrets/main@2x.jpg 2x,
-              /blog/five_secrets/main@3x.jpg 3x
+            :srcset="
+              `${blog.image}.jpg 1x,
+              ${blog.image}@2x.jpg 2x,
+              ${blog.image}@3x.jpg 3x`
             "
           />
-          <img
-            class="picture"
-            src="/blog/five_secrets/main.jpg"
-            alt="training"
-          />
+          <img class="picture" :src="`${blog.image}.jpg`" alt="training" />
         </picture>
-        <p class="date">22 августа</p>
-        <h3 class="heading">5 секретов для выдающегося дня</h3>
-        <p class="description">
-          Сценарий дня, когда ты сможешь побороть свою лень
+        <p class="date">
+          {{ $moment(blog.createdAt).format("YYYY MMM do ") }}
         </p>
-      </li>
-      <li>
-        <picture>
-          <source
-            media="(min-width: 300px)"
-            srcset="
-              /blog/five_secrets/main.jpg    1x,
-              /blog/five_secrets/main@2x.jpg 2x,
-              /blog/five_secrets/main@3x.jpg 3x
-            "
-          />
-          <img
-            class="picture"
-            src="/blog/five_secrets/main.jpg"
-            alt="training"
-          />
-        </picture>
-        <p class="date">22 августа</p>
-        <h3 class="heading">5 секретов для выдающегося дня</h3>
+        <h3 class="heading">{{ blog.name }}</h3>
         <p class="description">
-          Сценарий дня, когда ты сможешь побороть свою лень
-        </p>
-      </li>
-      <li>
-        <picture>
-          <source
-            media="(min-width: 300px)"
-            srcset="
-              /blog/five_secrets/main.jpg    1x,
-              /blog/five_secrets/main@2x.jpg 2x,
-              /blog/five_secrets/main@3x.jpg 3x
-            "
-          />
-          <img
-            class="picture"
-            src="/blog/five_secrets/main.jpg"
-            alt="training"
-          />
-        </picture>
-        <p class="date">22 августа</p>
-        <h3 class="heading">5 секретов для выдающегося дня</h3>
-        <p class="description">
-          Сценарий дня, когда ты сможешь побороть свою лень
+          {{ blog.description }}
         </p>
       </li>
     </ul>
-    <p class="arrow-text arrow-text__orange">
+    <p @click="$router.push('/blog')" class="arrow-text arrow-text__orange">
       To Blog
       <arrow-icon />
     </p>

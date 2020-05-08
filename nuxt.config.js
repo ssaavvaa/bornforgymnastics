@@ -54,8 +54,10 @@ export default {
     "nuxt-svg-loader",
     "@nuxtjs/axios",
     "@nuxtjs/auth",
-    "@nuxtjs/toast"
+    "@nuxtjs/toast",
+    "@nuxtjs/markdownit"
   ],
+
   toast: {
     position: "top-center",
 

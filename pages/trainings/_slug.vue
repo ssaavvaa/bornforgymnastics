@@ -120,23 +120,26 @@ export default {
   auth: false,
   methods: {
     addToCart(_id) {
-      const cart = localStorage.getItem("bornforgymnastic-cart");
-      if (!cart) {
-        localStorage.setItem("bornforgymnastic-cart", JSON.stringify([_id]));
+      const currCart = this.$store.state.cart;
+      console.log(currCart);
+      if (!currCart.length) {
+        this.$store.commit("setCart", [_id]);
+        localStorage.setItem("bornforgymnastics-cart", JSON.stringify([_id]));
         return this.$toast.success("Added to cart", {
           icon: "check"
         });
       }
-      const currCart = JSON.parse(
-        localStorage.getItem("bornforgymnastic-cart")
-      );
       if (currCart.includes(_id)) {
         return this.$toast.info("Already in cart", {
           icon: "info"
         });
       }
-      const newCart = JSON.stringify([...currCart, _id]);
-      localStorage.setItem("bornforgymnastic-cart", newCart);
+
+      this.$store.commit("setCart", [...currCart, _id]);
+      localStorage.setItem(
+        "bornforgymnastics-cart",
+        JSON.stringify([...currCart, _id])
+      );
       return this.$toast.success("Added to cart", {
         icon: "check"
       });
