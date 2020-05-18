@@ -5,9 +5,7 @@
         <logo-icon />
       </nuxt-link>
       <nuxt-link class="cart_wrapper" to="/cart">
-        <span v-show="$store.state.cart.length">
-          {{ $store.state.cart.length }}
-        </span>
+        <span v-show="$store.state.cart.length">{{ $store.state.cart.length }}</span>
 
         <cart-icon class="cart" />
       </nuxt-link>
@@ -24,7 +22,8 @@
 <script>
 export default {
   mounted() {
-    const cart = JSON.parse(localStorage.getItem("bornforgymnastics-cart"));
+    const cart =
+      JSON.parse(localStorage.getItem("bornforgymnastics-cart")) || [];
     this.$store.commit("setCart", cart);
   }
 };

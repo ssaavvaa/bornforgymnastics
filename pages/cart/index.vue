@@ -3,7 +3,7 @@
     <h1 class="heading-1">Cart</h1>
     <div class="wrapper">
       <div class="wrapper-cart-items">
-        <ul v-if="cart.length" class="cart-trainings">
+        <ul v-if="cart" class="cart-trainings">
           <li v-for="item in cart" :key="item._id">
             <cross-icon @click="deleteItem(item._id)" />
             <img :src="`${item.image}.jpg`" :alt="item.name" />
@@ -17,7 +17,7 @@
             </div>
           </li>
         </ul>
-        <p class="empty-cart" v-else>Cart is empty...</p>
+        <p v-else class="empty-cart">Cart is empty...</p>
       </div>
       <div class="wrapper-form">
         <form>
@@ -56,12 +56,9 @@ export default {
 
   computed: {
     cart() {
-      if (this.$store.state.cart.length) {
-        return this.$store.state.trainings.filter(x =>
-          this.$store.state.cart.includes(x._id)
-        );
-      }
-      return [];
+      return this.$store.state.trainings.filter(x =>
+        this.$store.state.cart.includes(x._id)
+      );
     }
   }
 };
