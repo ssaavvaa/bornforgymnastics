@@ -105,11 +105,12 @@ export default {
 
 .training-data__video-heading {
   cursor: pointer;
-  margin-bottom: 10px;
   font-family: $myriadLight;
   text-align: left !important;
+  margin-bottom: 0px;
+
   &:after {
-    content: "_";
+    content: "--";
     display: block;
     color: rgba(0, 0, 0, 0.233);
   }
@@ -157,6 +158,28 @@ export default {
   background: $lightBackground;
   * {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+  }
+  .training-data {
+    height: auto;
+    order: 2;
+  }
+  .training-video {
+    height: 65vh;
+    order: 1;
+    overflow: initial;
+    padding: 0px;
+    margin: 0px;
+  }
+  .training_iframe {
+    height: 65vh;
+    min-height: auto;
   }
 }
 </style>

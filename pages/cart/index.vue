@@ -81,6 +81,7 @@ export default {
 }
 
 .wrapper-cart-items {
+  min-height: 100px;
   background: $lightBackground;
   padding: 35px;
 }
@@ -97,6 +98,7 @@ export default {
 
 .cart-trainings {
   display: grid;
+
   grid-template-columns: 1fr;
   grid-gap: 20px;
   justify-content: center;

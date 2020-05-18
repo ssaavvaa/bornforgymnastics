@@ -3,7 +3,7 @@
     <div class="container container-form">
       <form @submit="handleSubmit">
         <h2 class="heading-1 form-heading">LOGIN</h2>
-        <input v-model="identifier" type="email" placeholder="email" />
+        <input v-model="identifier" autocomplete="on" type="email" placeholder="email" />
         <input v-model="password" type="password" placeholder="password" />
         <button type="submit">Submit</button>
         <i class="fa fa-user"></i>

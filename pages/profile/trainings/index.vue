@@ -75,4 +75,31 @@ export default {};
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    li {
+      grid-template-columns: 1fr;
+
+      div {
+        h3 {
+          font-size: 22px;
+          font-family: "robotoMedium";
+          margin-bottom: 8px;
+        }
+      }
+
+      button {
+        transform: skewX(0deg);
+        span {
+          transform: skewX(0deg);
+        }
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
 </style>
