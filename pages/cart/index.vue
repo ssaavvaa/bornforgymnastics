@@ -3,7 +3,7 @@
     <h1 class="heading-1">Cart</h1>
     <div class="wrapper">
       <div class="wrapper-cart-items">
-        <ul v-if="cart && cart.length" class="cart-trainings">
+        <ul v-if="cart.length" class="cart-trainings">
           <li v-for="item in cart" :key="item._id">
             <cross-icon @click="deleteItem(item._id)" />
             <img :src="`${item.image}.jpg`" :alt="item.name" />
@@ -22,21 +22,9 @@
       <div class="wrapper-form">
         <form>
           <h2 class="heading-form">Payment</h2>
-          <input
-            :disabled="$auth.state.loggedIn"
-            type="text"
-            placeholder="username"
-          />
-          <input
-            :disabled="$auth.state.loggedIn"
-            type="email"
-            placeholder="email"
-          />
-          <input
-            :disabled="$auth.state.loggedIn"
-            type="password"
-            placeholder="password"
-          />
+          <input :disabled="$auth.$state.loggedIn" type="text" placeholder="username" />
+          <input :disabled="$auth.$state.loggedIn" type="email" placeholder="email" />
+          <input :disabled="$auth.$state.loggedIn" type="password" placeholder="password" />
           <button>Pay</button>
         </form>
       </div>
@@ -68,9 +56,12 @@ export default {
 
   computed: {
     cart() {
-      return this.$store.state.trainings.filter(x =>
-        this.$store.state.cart.includes(x._id)
-      );
+      if (this.$store.state.cart.length) {
+        return this.$store.state.trainings.filter(x =>
+          this.$store.state.cart.includes(x._id)
+        );
+      }
+      return [];
     }
   }
 };
