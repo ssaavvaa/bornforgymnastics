@@ -3,7 +3,7 @@
     <h1 class="heading-1">Cart</h1>
     <div class="wrapper">
       <div class="wrapper-cart-items">
-        <ul v-if="cart.length" class="cart-trainings">
+        <ul v-if="cart && cart.length" class="cart-trainings">
           <li v-for="item in cart" :key="item._id">
             <cross-icon @click="deleteItem(item._id)" />
             <img :src="`${item.image}.jpg`" :alt="item.name" />
