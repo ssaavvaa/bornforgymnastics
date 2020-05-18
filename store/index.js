@@ -24,7 +24,7 @@ export const actions = {
       );
       const { data: blogs } = await $axios.get("/blogs?_sort=createdAt:desc");
       commit("setBlogs", blogs);
-      return commit("setTrainings", trainings);
+      commit("setTrainings", trainings);
     } catch (err) {
       console.log(err);
     }
