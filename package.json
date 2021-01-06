@@ -16,7 +16,7 @@
     "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/moment": "^1.6.0",
     "@nuxtjs/toast": "^3.3.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "nuxt": "^2.0.0",
     "nuxt-svg-loader": "^1.2.0",
     "vue-fragment": "^1.5.1"
